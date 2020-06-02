@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const element = <h1>Hello from Create React App</h1>;
+import DevTipsContainer from "./components/DevTipsContainer";
 
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(<DevTipsContainer />, document.getElementById("root"));
