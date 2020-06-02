@@ -5,7 +5,7 @@ import TipItem from "./TipItem";
 class TipsList extends React.Component {
     render() {
         return (
-            <div>
+            <div className="listContainer">
                 {this.props.tips.map(tip => (
                     <TipItem key={tip.id} tip={tip} />
                 ))}

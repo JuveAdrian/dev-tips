@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="dashboardContainer">
                 <TipsList tips={this.state.tips} />
             </div>
         )

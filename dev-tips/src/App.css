@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.4;
+    color: #1f1f1f;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0px;
+    display: flex;
+    height: 100vh;
+  }
+
+  .sidebarContainer {
+    background-color: #412f44;
+    color: ivory;
+    width: 20%;
+  }
+
+  .dashboardContainer {
+    background-color: #eeeaef;
+    width: 80%;
+  }
+
+  .tipContainer {
+    width: 94%;
+    margin: 15px 3%;
+    padding: 20px 15px;
+    background-color: white;
+    list-style-type: none;
+    box-shadow: 1px 1px 2px 0px rgb(206, 206, 206);
+  }
+
+  .tipContainer h1 {
+      font-size: 1.3em;
+  }
