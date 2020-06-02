@@ -21,11 +21,13 @@
     background-color: #412f44;
     color: ivory;
     width: 20%;
+    min-width: 200px;
   }
 
   .dashboardContainer {
     background-color: #eeeaef;
     width: 80%;
+    
   }
 
   .tipContainer {
