@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import DashboardHeader from "./dashboard/DashboardHeader";
 import TipsList from "./dashboard/TipsList";
 
 class Dashboard extends React.Component {
@@ -27,6 +28,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboardContainer">
+                <DashboardHeader />
                 <TipsList tips={this.state.tips} />
             </div>
         )

@@ -15,23 +15,25 @@
     padding: 0 0px;
     display: flex;
     height: 100vh;
+    background-color: #eeeaef;
   }
 
   .sidebarContainer {
     background-color: #412f44;
     color: ivory;
     width: 20%;
-    min-width: 200px;
+    min-width: 220px;
+    max-width: 280px;
+    padding-top: 30px;
   }
 
   .dashboardContainer {
-    background-color: #eeeaef;
     width: 80%;
-    
   }
 
   .tipContainer {
     width: 94%;
+    max-width: 800px;
     margin: 15px 3%;
     padding: 20px 15px;
     background-color: white;
@@ -41,4 +43,5 @@
 
   .tipContainer h1 {
       font-size: 1.3em;
+      align-self: center;
   }
