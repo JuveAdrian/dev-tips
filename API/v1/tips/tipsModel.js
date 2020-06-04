@@ -7,6 +7,7 @@ const TipSchema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
     category: { type: String, required: true },
+    /* hashTag: {[ type: String ]}, */
     created: { type: Date, required: true }
 });
 
