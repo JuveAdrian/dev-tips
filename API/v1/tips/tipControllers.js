@@ -5,7 +5,33 @@ const Tip = require('./tipsModel');
 
 module.exports = {
     getAll: (req, res, next) => {
-        console.log('getAll');
+        Tip.find()
+            .select("title content category created _id")
+            .exec()
+            .then(docs => {
+                const response = {
+                    count: docs.length,
+                    tips: docs.map(doc => {
+                        return {
+                            title: doc.title,
+                            content: doc.content,
+                            category: doc.category,
+                            created: doc.created,
+                            _id: doc._id,
+                            request: {
+                                type: "GET",
+                                url: "http://localhost:4000/children/" + doc._id
+                            }
+                        }
+                    })
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            });
     },
     getTip: (req, res, next) => {
         console.log('getTip');
@@ -34,7 +60,7 @@ module.exports = {
                         title: result.title,
                         content: result.content,
                         category: result.category,
-                        created: result.category,
+                        created: result.created,
                         _id: result._id,
                         request: {
                             type: 'GET',
