@@ -20,7 +20,7 @@ module.exports = {
                             _id: doc._id,
                             request: {
                                 type: "GET",
-                                url: "http://localhost:4000/children/" + doc._id
+                                url: "http://localhost:4000/tips/" + doc._id
                             }
                         }
                     })
@@ -34,7 +34,32 @@ module.exports = {
             });
     },
     getTip: (req, res, next) => {
-        console.log('getTip');
+        const id = req.params.tipId;
+        Tip.findById(id)
+            .select("title content category created _id")
+            .exec()
+            .then(doc => {
+                if(doc) {
+                    res.status(200).json({
+                        child: doc,
+                        request: {
+                            type: "GET",
+                            description: 'Get all Tips',
+                            url: "http://localhost:4000/tips/"
+                        }
+                    });
+                } else {
+                    res
+                        .status(200)
+                        .json({message: "No valid entry found for provided ID"});
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            })
     },
     getTipByCategory: (req, res, next) => {
         console.log('getTipByCategory');
