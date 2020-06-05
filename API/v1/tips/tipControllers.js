@@ -103,9 +103,48 @@ module.exports = {
             });
     },
     updateTip: (req, res, next) => {
-        console.log('updateTip');
+        const id = req.params.tipId;
+        const updateOps = {};
+        for (const ops of req.body) {
+            updateOps[ops.propName] = ops.value;
+        }
+        Tip.update({ _id : id }, { $set: updateOps })
+            .exec()
+            .then(result => {
+                res.status(200).json({
+                    message: 'Tip updated',
+                    request: {
+                        type: "GET",
+                        url: 'http://localhost:4000/tips/' + id
+                    }
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            });
     },
     deleteTip: (req, res, next) => {
-        console.log('deleteTip');
+        const id = req.params.tipId;
+        Tip.remove({_id : id})
+            .exec()
+            .then(result => {
+                res.status(200).json({
+                    message: 'Tip deleted',
+                    request: {
+                        type: 'POST',
+                        url: 'http://localhost:3000/tips',
+                        body: { name: 'String', surname: 'String' }
+                    }
+                })
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error : err
+                });
+            });
     }
 }
