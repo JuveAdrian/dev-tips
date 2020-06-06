@@ -10,7 +10,9 @@ module.exports = {
             .exec()
             .then(docs => {
                 const response = {
-                    count: docs.length,
+                    info: {
+                        count: docs.length
+                    },
                     tips: docs.map(doc => {
                         return {
                             title: doc.title,
