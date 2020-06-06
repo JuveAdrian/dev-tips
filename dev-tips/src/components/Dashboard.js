@@ -26,6 +26,7 @@ class Dashboard extends React.Component {
         ]
     }
     render() {
+        fetch("http://localhost:4000/tips/").then(response => console.log(response));
         return (
             <div className="dashboardContainer">
                 <DashboardHeader />
