@@ -18,7 +18,6 @@ class Dashboard extends React.Component {
         });
     }
     render() {
-        console.log(`TEST: ${this.state.tips}`)
         return (
             <div className="dashboardContainer">
                 <DashboardHeader />
