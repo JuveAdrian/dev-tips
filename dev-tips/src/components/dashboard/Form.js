@@ -34,7 +34,7 @@ class Form extends React.Component {
     }
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form className="form-main-style" onSubmit={this.handleSubmit}>
                 <label>
                     Title:
                     <input type="text" value={this.state.title}  />
