@@ -45,3 +45,9 @@
       font-size: 1.3em;
       align-self: center;
   }
+
+  label {
+    display: block;
+    margin-right:  30px;
+    text-align: left;
+  }

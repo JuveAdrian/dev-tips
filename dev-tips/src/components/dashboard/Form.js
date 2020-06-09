@@ -5,9 +5,9 @@ class Form extends React.Component {
         super(props);
         
         this.state = {
-            title: 'Testowy tytuł formularza',
-            content: 'Testowy tekst formularza',
-            category: 'Testowa kategoria formularza'
+            title: '',
+            content: '',
+            category: ''
         };
 
         this.handleChange = (event) => {
@@ -28,7 +28,20 @@ class Form extends React.Component {
             .catch((error) => {
                 console.error('Error:', error);
             });
-      }
+        };
+
+        this.handleChangeFormTitle = (event) => {
+            this.setState({title: event.target.value});
+            console.log(this.state.title);
+        };
+        this.handleChangeFormContent = (event) => {
+            this.setState({content: event.target.value});
+            console.log(this.state.content);
+        };
+        this.handleChangeFormCategory = (event) => {
+            this.setState({category: event.target.value});
+            console.log(this.state.category);
+        };
     
         
     }
@@ -37,15 +50,15 @@ class Form extends React.Component {
             <form className="form-main-style" onSubmit={this.handleSubmit}>
                 <label>
                     Title:
-                    <input type="text" value={this.state.title}  />
+                    <input type="text" name="title" value={this.state.title} onChange={this.handleChangeFormTitle}  />
                 </label>
                 <label>
                     Content:
-                    <input type="text" value={this.state.content}  />
+                    <input type="text" name="content" value={this.state.content} onChange={this.handleChangeFormContent} />
                 </label>
                 <label>
                     Category:
-                    <input type="text" value={this.state.category}  />
+                    <input type="text" name="category" value={this.state.category} onChange={this.handleChangeFormCategory} />
                 </label>
                 <input type="submit" onClick={this.handleChange}  value="Wyślij" />
             </form>
