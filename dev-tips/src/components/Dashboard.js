@@ -10,6 +10,10 @@ class Dashboard extends React.Component {
     state = {
         tips: []
     }
+    delTip = id => {
+        console.log('delete', id);
+    }
+    
 
     componentDidMount() {
         fetch("http://localhost:4000/tips/")
@@ -23,7 +27,10 @@ class Dashboard extends React.Component {
             <div className="dashboardContainer">
                 <DashboardHeader />
                 <Form />
-                <TipsList tips={this.state.tips} />
+                <TipsList 
+                    tips={this.state.tips} 
+                    deleteTipProps={this.delTip}   
+                />
             </div>
         )
     }

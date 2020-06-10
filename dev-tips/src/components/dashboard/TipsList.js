@@ -7,7 +7,11 @@ class TipsList extends React.Component {
         return (
             <div className="listContainer">
                 {this.props.tips.map(tip => (
-                    <TipItem key={tip._id} tip={tip} />
+                    <TipItem 
+                        key={tip._id} 
+                        tip={tip} 
+                        deleteTipProps={this.props.deleteTipProps}
+                    />
                 ))}
             </div>
         )
