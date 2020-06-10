@@ -10,7 +10,6 @@ class DevTipsContainer extends React.Component {
             <div className="container">    
                 <Sidebar />
                 <Dashboard />
-                <Form />
             </div>
         )
     }

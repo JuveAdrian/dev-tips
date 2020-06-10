@@ -4,6 +4,7 @@ import React from "react";
 
 import DashboardHeader from "./dashboard/DashboardHeader";
 import TipsList from "./dashboard/TipsList";
+import Form from "./dashboard/Form";
 
 class Dashboard extends React.Component {
     state = {
@@ -21,6 +22,7 @@ class Dashboard extends React.Component {
         return (
             <div className="dashboardContainer">
                 <DashboardHeader />
+                <Form />
                 <TipsList tips={this.state.tips} />
             </div>
         )

@@ -40,8 +40,12 @@ class Form extends React.Component {
     }
     render() {
         return(
-            <form class="form-style-9" onSubmit={this.handleSubmit}>
+            <form className="form-style-9" onSubmit={this.handleSubmit}>
+                
                 <ul>
+                    <li>
+                        <h1>Add some interesting tip...</h1>    
+                    </li> 
                     <li>
                         <input type="text" name="title" value={this.state.title} onChange={this.handleChangeForm} className="field-style field-full align-none" placeholder="Title" />
                     </li>
