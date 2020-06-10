@@ -1,5 +1,5 @@
 /* Dashboard.js */
-
+import axios from "axios"
 import React from "react";
 
 import DashboardHeader from "./dashboard/DashboardHeader";
@@ -9,10 +9,17 @@ import Form from "./dashboard/Form";
 class Dashboard extends React.Component {
     state = {
         tips: []
-    }
+    };
+    
     delTip = id => {
-        console.log('delete', id);
-    }
+        fetch("http://localhost:4000/tips/" + id, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
     
 
     componentDidMount() {
@@ -21,7 +28,8 @@ class Dashboard extends React.Component {
         .then(data => {
             this.setState({ tips: data.tips});
         });
-    }
+    };
+
     render() {
         return (
             <div className="dashboardContainer">

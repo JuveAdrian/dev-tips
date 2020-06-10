@@ -132,15 +132,15 @@ module.exports = {
     },
     deleteTip: (req, res, next) => {
         const id = req.params.tipId;
-        Tip.remove({_id : id})
+        Tip.deleteOne({_id : id})
             .exec()
             .then(result => {
                 res.status(200).json({
                     message: 'Tip deleted',
                     request: {
                         type: 'POST',
-                        url: 'http://localhost:3000/tips',
-                        body: { name: 'String', surname: 'String' }
+                        url: 'http://localhost:3000/tips/' + id,
+                        body: { title: 'String', content: 'String' }
                     }
                 })
             })

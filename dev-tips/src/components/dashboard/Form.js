@@ -29,6 +29,8 @@ class Form extends React.Component {
                 console.error('Error:', error);
             });
         };
+
+        
         this.handleChangeForm = (e) => {
             console.log(e.target.name);
             console.log(e.target.value);
