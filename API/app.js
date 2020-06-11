@@ -24,11 +24,11 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/tips', tipsRoutes);
-
 mongoose.connect('mongodb+srv://juveadrian:' + process.env.MONGO_ATLAS_PW + '@cluster0-zdicr.mongodb.net/dev-tips?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true });
 
 mongoose.Promise = global.Promise;
+
+app.use('/tips', tipsRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
