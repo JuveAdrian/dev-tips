@@ -133,8 +133,7 @@ module.exports = {
     deleteTip: (req, res, next) => {
         const id = req.params.tipId;
         console.log(req.params);
-        console.log({_id: id});
-        Tip.deleteOne({_id : id})
+        Tip.deleteOne({ _id: id})
             .exec()
             .then(doc => {
                 res.status(200).json({

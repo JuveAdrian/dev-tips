@@ -18,8 +18,8 @@ router.get('/:tipHash', tipControllers.getTipByHash);
 
 router.post('/', tipControllers.addTip);
 
-router.patch('/:childId', tipControllers.updateTip);
+router.patch('/:tipId', tipControllers.updateTip);
 
-router.delete('/:childId', tipControllers.deleteTip);
+router.delete('/:tipId', tipControllers.deleteTip);
 
 module.exports = router;
