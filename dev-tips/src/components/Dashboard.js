@@ -31,6 +31,29 @@ class Dashboard extends React.Component {
             console.error('Error:', error);
         });
     };
+
+    addTip = (title, content, category) => {
+        const data = {title: title, content: content, category: category, created: '123', _id: '123'};
+        fetch("http://localhost:4000/tips", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+              },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .then(response =>
+            this.setState({
+                tips: [...this.state.tips, response.data],
+              })
+        )
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
     
 
     componentDidMount() {
@@ -45,7 +68,7 @@ class Dashboard extends React.Component {
         return (
             <div className="dashboardContainer">
                 <DashboardHeader />
-                <Form />
+                <Form addTipProps={this.addTip} />
                 <TipsList 
                     tips={this.state.tips} 
                     deleteTipProps={this.delTip}   

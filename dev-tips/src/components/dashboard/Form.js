@@ -13,33 +13,14 @@ class Form extends React.Component {
         this.handleChange = (event) => {
             console.log(event.target.value);
             event.preventDefault()
-            const data = { title: this.state.title, content: this.state.content, category: this.state.category };
-            fetch("http://localhost:4000/tips", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                  },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            this.props.addTipProps(this.state.title, this.state.content, this.state.category);
         };
-
         
         this.handleChangeForm = (e) => {
-            console.log(e.target.name);
-            console.log(e.target.value);
             const eName = e.target.name;
             this.setState({[eName]: e.target.value})
-        }
-    
-        
-    }
+        }        
+    };
     render() {
         return(
             <form className="form-style-9" onSubmit={this.handleSubmit}>
@@ -55,7 +36,7 @@ class Form extends React.Component {
                         <input type="text" name="category" value={this.state.category} onChange={this.handleChangeForm} className="field-style field-full align-none" placeholder="Category" />
                     </li>
                     <li>
-                    <textarea name="content" value={this.state.content} onChange={this.handleChangeForm} className="field-style" placeholder="Content"></textarea>
+                        <textarea name="content" value={this.state.content} onChange={this.handleChangeForm} className="field-style" placeholder="Content"></textarea>
                     </li>
                     <li>
                     <input type="submit" onClick={this.handleChange} value="Send Message" />
