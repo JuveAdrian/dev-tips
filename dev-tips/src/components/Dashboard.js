@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
     };
 
     addTip = (title, content, category) => {
-        const data = {title: title, content: content, category: category, created: '123', _id: '123'};
+        const data = {title: title, content: content, category: category, _id: '123', created: Date()};
         fetch("http://localhost:4000/tips", {
             method: "POST",
             headers: {
@@ -44,12 +44,10 @@ class Dashboard extends React.Component {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-        })
-        .then(response =>
             this.setState({
-                tips: [...this.state.tips, response.data],
+                tips: [...this.state.tips, data.createdTip],
               })
-        )
+        })
         .catch((error) => {
             console.error('Error:', error);
         });

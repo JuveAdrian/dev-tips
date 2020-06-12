@@ -11,14 +11,16 @@ class Form extends React.Component {
         };
 
         this.handleChange = (event) => {
-            console.log(event.target.value);
             event.preventDefault()
             this.props.addTipProps(this.state.title, this.state.content, this.state.category);
+            this.state.title = '';
+            this.state.content = '';
+            this.state.category = '';
         };
         
-        this.handleChangeForm = (e) => {
-            const eName = e.target.name;
-            this.setState({[eName]: e.target.value})
+        this.handleChangeForm = (event) => {
+            const eName = event.target.name;
+            this.setState({[eName]: event.target.value})
         }        
     };
     render() {
