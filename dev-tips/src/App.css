@@ -11,6 +11,7 @@
 
   .container {
     max-width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 0 0px;
     display: flex;
@@ -44,6 +45,21 @@
   .tipContainer h1 {
       font-size: 1.3em;
       align-self: center;
+  }
+
+  button {
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-top: 20px;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
   }
 
 
