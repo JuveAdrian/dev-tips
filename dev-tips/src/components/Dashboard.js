@@ -11,10 +11,22 @@ class Dashboard extends React.Component {
     };
     
     delTip = id => {
+        console.log(id);
+        const tipsArray = this.state.tips;
+        const index = tipsArray.findIndex( o => o._id === id);
         fetch("http://localhost:4000/tips/" + id, {
             method: 'DELETE'
         })
         .then(response => response.json())
+        .then(
+            this.setState({
+                tips: [
+                  ...this.state.tips.filter(tips => {
+                    return tips._id !== id
+                  }),
+                ],
+              })
+        )
         .catch((error) => {
             console.error('Error:', error);
         });
