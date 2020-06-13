@@ -65,7 +65,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboardContainer">
-                <DashboardHeader />
+                <DashboardHeader length={this.state.tips.length} />
                 <Form addTipProps={this.addTip} />
                 <TipsList 
                     tips={this.state.tips} 
