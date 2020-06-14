@@ -32,16 +32,43 @@ class Form extends React.Component {
                         <h1>Add some interesting tip...</h1>    
                     </li> 
                     <li>
-                        <input type="text" name="title" value={this.state.title} onChange={this.handleChangeForm} className="field-style field-full align-none" placeholder="Title" />
+                        <input 
+                            type="text" 
+                            name="title" 
+                            value={this.state.title} 
+                            onChange={this.handleChangeForm} 
+                            className="field-style field-full align-none" 
+                            placeholder="Title" 
+                            required 
+                        />
                     </li>
                     <li>
-                        <input type="text" name="category" value={this.state.category} onChange={this.handleChangeForm} className="field-style field-full align-none" placeholder="Category" />
+                        <input 
+                            type="text" 
+                            name="category" 
+                            value={this.state.category} 
+                            onChange={this.handleChangeForm} 
+                            className="field-style field-full align-none" 
+                            placeholder="Category" 
+                            required 
+                        />
                     </li>
                     <li>
-                        <textarea name="content" value={this.state.content} onChange={this.handleChangeForm} className="field-style" placeholder="Content"></textarea>
+                        <textarea 
+                            name="content" 
+                            value={this.state.content} 
+                            onChange={this.handleChangeForm} 
+                            className="field-style" 
+                            placeholder="Content" 
+                            required>
+                        </textarea>
                     </li>
                     <li>
-                    <input type="submit" onClick={this.handleChange} value="Send Message" />
+                    <input 
+                        type="submit" 
+                        onClick={this.handleChange} 
+                        value="Send Message" 
+                    />
                     </li>
                 </ul>
             </form>
