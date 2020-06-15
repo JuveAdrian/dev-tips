@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const tipsRoutes = require('./v1/tips/tipsRoutes');
+const userRoutes = require('./v1/users/userRouter');
 
 app.use(morgan('dev'));
 
@@ -29,6 +30,7 @@ mongoose.connect('mongodb+srv://juveadrian:' + process.env.MONGO_ATLAS_PW + '@cl
 mongoose.Promise = global.Promise;
 
 app.use('/tips', tipsRoutes);
+app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
