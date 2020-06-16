@@ -7,7 +7,7 @@ const router = express.Router();
 const User = require('../users/userModel');
 
 router.post('/signup', (req, res, next) => {
-    User.find({ email: req.body.email })
+    User.findOne({ email: req.body.email })
         .exec()
         .then(user => {
             if( user.length >= 1 ) {
@@ -46,7 +46,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.delete('/:userId', (req, res, next) => {
-    User.remove({_id: req.params.userid})
+    User.deleteOne({_id: req.params.userid})
         .exec()
         .then(result => {
             res.status(200).json({
