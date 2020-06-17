@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const User = require('./userModel');
 const bycrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+const User = require('./userModel');
 
 module.exports = {
     signup: (req, res, next) => {
