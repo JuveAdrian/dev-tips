@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const router = express.Router();
 
+const checkAuth = require('../middleware/check-auth');
 const tipControllers = require('./tipControllers');
 const Tip = require('./tipsModel');
 
@@ -16,10 +17,10 @@ router.get('/:tipCategory', tipControllers.getTipByCategory);
 
 router.get('/:tipHash', tipControllers.getTipByHash);
 
-router.post('/', tipControllers.addTip);
+router.post('/', checkAuth, tipControllers.addTip);
 
-router.patch('/:tipId', tipControllers.updateTip);
+router.patch('/:tipId', checkAuth, tipControllers.updateTip);
 
-router.delete('/:tipId', tipControllers.deleteTip);
+router.delete('/:tipId', checkAuth, tipControllers.deleteTip);
 
 module.exports = router;

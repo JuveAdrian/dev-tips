@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const Tip = require('./tipsModel');
 
-
 module.exports = {
     getAll: (req, res, next) => {
         Tip.find()
