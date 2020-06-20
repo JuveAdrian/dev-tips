@@ -2,12 +2,16 @@
 
 import React from "react";
 
-import Logo from "./sidebar/logo";
+import Logo from "./sidebar/Logo";
+import Menu from "./sidebar/Menu";
 
 class Sidebar extends React.Component {
     render() {
         return (
-            <Logo />
+            <div>
+                <Logo />
+                <Menu />
+            </div>
         )
     }
 }
