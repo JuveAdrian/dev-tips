@@ -76,7 +76,27 @@
     font: 12px Arial, Helvetica, sans-serif;
   }
 
-
+  .navbar-header {
+    text-align: center;
+    min-width: 220px;
+    max-width: 280px;
+    margin-top: 50px;
+    font-size: 1.4em;
+  }
+  .navbar-header li{
+    padding-top: 20px;
+  }
+  
+  .navbar-header a{
+    width: 100%;
+    min-width: 220px;
+    max-width: 280px;
+    color: white;
+    text-decoration: none;
+  }
+  .navbar-header a:hover {
+    color: #3985B1;
+  }
   
   .form-style-9{
     width: 80%;
