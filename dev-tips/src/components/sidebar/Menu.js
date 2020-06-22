@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class Menu extends React.Component {
     render() {
@@ -7,8 +8,12 @@ class Menu extends React.Component {
                 <div className="container sidebarContainer">
                     <div className="navbar-header">
                         <ul className="nav navbar-nav">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Tips</a></li>
+                            <Link to="/">
+                                <li><a href="">Home</a></li>
+                            </Link>
+                            <Link to="/aboute">
+                                <li><a href="">Tips</a></li>
+                            </Link>
                         </ul>
                     </div>
                 </div>
