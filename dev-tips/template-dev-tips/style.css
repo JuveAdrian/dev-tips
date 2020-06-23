@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [line-1] 10% [line-2] 40% [line-3] 40% [line-4] 10% [line-5];
+    grid-template-rows: [row-1] 20vh [row-2] 60% [row-3] 20vh [row-4];
+    align-content: stretch;
+}
+
+.login {
+    display: grid;
+    grid-column-start: line-2;
+    grid-column-end: span line-4;
+    grid-row-start: row-2;
+    grid-row-end: span row-3;
+    background-color: darkgoldenrod;
+    justify-content: center;
+    border-radius: 30px;
+    height: auto;
+}
+
+.sidebar {
+    background-image: url('./post-a-job.png');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    float: left;
+    height: 100%;
+    background-color: cornflowerblue;
+    align-content: stretch;
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+
+.dashboard {
+    background-color: brown;
+    float: left;
+    background-color: darkcyan;
+    height: 100%;
+    width: 50%;
+    align-content: stretch;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
