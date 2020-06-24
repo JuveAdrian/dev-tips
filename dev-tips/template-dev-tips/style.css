@@ -8,6 +8,7 @@
     grid-template-columns: [line-1] 10% [line-2] 40% [line-3] 40% [line-4] 10% [line-5];
     grid-template-rows: [row-1] 20vh [row-2] 60% [row-3] 20vh [row-4];
     align-content: stretch;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .login {
@@ -15,11 +16,11 @@
     grid-column-end: span line-4;
     grid-row-start: row-2;
     grid-row-end: span row-3;
-    background-color: darkgoldenrod;
     justify-content: center;
     border-radius: 30px;
     height: auto;
     align-content: stretch;
+    box-shadow:  0px 0px 22px 1px rgba(102,102,102,1);
 }
 
 .sidebar {
@@ -41,10 +42,8 @@
 
 
 .dashboard {
-    background-color: brown;
     display: flex;
     float: left;
-    background-color: darkcyan;
     height: 100%;
     width: 50%;
     align-content: stretch;
@@ -56,15 +55,27 @@
 * {box-sizing: border-box}
 
 /* Add padding to containers */
-.container {
+.container1 {
   padding: 16px;
+  margin-left: 10%;
+}
+
+label{
+    width: 80%;
+  padding: 5px;
+  margin: 5px 0 5px 0;
+  display: inline-block;
+}
+input {
+   
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 80%;
+  
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 2px 0 22px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -89,7 +100,7 @@ hr {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   opacity: 0.9;
 }
 
@@ -104,6 +115,6 @@ a {
 
 /* Set a grey background color and center the text of the "sign in" section */
 .signin {
-  background-color: #f1f1f1;
   text-align: center;
+  width: 80%;
 }
