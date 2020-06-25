@@ -58,10 +58,15 @@
 .container1 {
   padding: 16px;
   margin-left: 10%;
+  width: 80%;
+}
+
+.container1 h1{
+  text-align: center;
 }
 
 label{
-    width: 80%;
+  width: 100%;
   padding: 5px;
   margin: 5px 0 5px 0;
   display: inline-block;
@@ -72,7 +77,7 @@ input {
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 80%;
+  width: 100%;
   
   padding: 15px;
   margin: 2px 0 22px 0;
@@ -100,7 +105,8 @@ hr {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 80%;
+  width: 60%;
+  margin-left: 20%;
   opacity: 0.9;
 }
 
@@ -115,6 +121,7 @@ a {
 
 /* Set a grey background color and center the text of the "sign in" section */
 .signin {
+  margin-top: -20px;
   text-align: center;
   width: 80%;
 }
