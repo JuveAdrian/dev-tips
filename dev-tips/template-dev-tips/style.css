@@ -20,7 +20,7 @@
     border-radius: 30px;
     height: auto;
     align-content: stretch;
-    box-shadow:  0px 0px 22px 1px rgba(102,102,102,1);
+    box-shadow:  0px 0px 22px 1px rgba(102,102,102,0.4);
 }
 
 .sidebar {
@@ -63,6 +63,12 @@
 
 .container1 h1{
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.container1 p {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 label{
