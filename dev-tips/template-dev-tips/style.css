@@ -5,11 +5,14 @@
 
 .container {
     display: grid;
+    height: 100vh;
     grid-template-columns: [line-1] 10% [line-2] 40% [line-3] 40% [line-4] 10% [line-5];
     grid-template-rows: [row-1] 20vh [row-2] 60% [row-3] 20vh [row-4];
     align-content: stretch;
     font-family: "Segoe UI", Arial, sans-serif;
-}
+    background: rgb(42,42,42);
+    background: linear-gradient(0deg, rgba(42,42,42,1) 0%, rgba(68,68,68,1) 100%, rgba(41,41,41,1) 100%);
+  }
 
 .login {
     grid-column-start: line-2;
@@ -20,7 +23,8 @@
     border-radius: 30px;
     height: auto;
     align-content: stretch;
-    box-shadow:  0px 0px 22px 1px rgba(102,102,102,0.4);
+    box-shadow:  0px 0px 35px 1px rgba(0,0,0,0.6);
+    background-color: #fff;
 }
 
 .sidebar {
@@ -29,10 +33,11 @@
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
+    border-right: 1px solid #e1e1e1;
     display: flex;
     float: left;
     height: 100%;
-    background-color: cornflowerblue;
+    background-color: rgb(255, 255, 255);
     align-content: stretch;
     width: 50%;
     border-top-left-radius: 20px;
