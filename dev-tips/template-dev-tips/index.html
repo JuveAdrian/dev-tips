@@ -33,7 +33,7 @@
                         </div>
                       
                         <div class="container1 signin">
-                          <p>Already have an account? <a href="#">Sign in</a>.</p>
+                          <p>Already have an account? <a href="#" onclick="LoginPageChange();">Sign in</a>.</p>
                         </div>
                       </form>                      
                 </form>
@@ -41,5 +41,12 @@
         </div>
         
     </div>
+
+    <script>
+        const LoginPageChange = () => {
+            const dashboard = document.getElementsByClassName("dashboard");
+            console.log(dashboard);
+        }
+    </script>
 </body>
 </html>
