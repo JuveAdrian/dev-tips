@@ -16,8 +16,8 @@
                 <form>
                     <form action="action_page.php">
                         <div class="container1">
-                          <h1>Register</h1>
-                          <p>Please fill in this form to create an account.</p>
+                          <h1 id="login-h1">Register</h1>
+                          <p id="login-text">Please fill in this form to create an account.</p>
                           
                       
                           <label for="email"><b>Email</b></label>
@@ -26,8 +26,11 @@
                           <label for="psw"><b>Password</b></label>
                           <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
                       
-                          <label for="psw-repeat"><b>Repeat Password</b></label>
-                          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>                   
+                          <div id="psw-repeat-container">
+                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required> 
+                          </div>
+                                            
                           
                           <button type="submit" class="registerbtn">Register</button>
                         </div>
@@ -46,6 +49,12 @@
         const LoginPageChange = () => {
             const sidebar = document.getElementsByClassName('sidebar');
             sidebar[0].style.float = 'right';
+            const pText = document.getElementById('login-text');
+            pText.innerHTML = 'Zaloguj się';
+            const h1Login = document.getElementById('login-h1');
+            h1Login.innerHTML = 'Login';
+            const pswDiv = document.getElementById('psw-repeat-container');
+            pswDiv.style.display = 'none';
         }
     </script>
 </body>
