@@ -36,7 +36,7 @@
                         </div>
                       
                         <div class="container1 signin">
-                          <p>Already have an account? <a href="#" onclick="LoginPageChange();">Sign in</a>.</p>
+                          <p id="pBottom">Already have an account? <a href="#" onclick="LoginPageChange();">Sign in</a>.</p>
                         </div>
                       </form>                      
                 </form>
@@ -55,6 +55,10 @@
             h1Login.innerHTML = 'Login';
             const pswDiv = document.getElementById('psw-repeat-container');
             pswDiv.style.display = 'none';
+            const pBottom = document.getElementById('pBottom');
+            pBottom.innerHTML = 'No acount? <a href="#">Register!</p>';
+            const container1 = document.getElementsByClassName('container1');
+            container1.style.margin = '1500px';
         }
     </script>
 </body>
