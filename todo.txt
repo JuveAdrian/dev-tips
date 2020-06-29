@@ -1,0 +1,6 @@
+/* List of things to do */
+
+1. Zaplanować dokładny schemat aplikacji
+2. Naprawić i dostosować projet Reactowy do schematu aplikacji
+3. Wdrożyć logowanie do korzystania z Api jak i frontu
+4. Dodać kolejny model do API "category"
