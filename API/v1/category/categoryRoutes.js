@@ -2,24 +2,16 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    console.log('GET ALL');
-});
+const categoryControllers = require('./categoryControllers');
 
-router.get('/:categoryId', (req, res, next) => {
-    console.log('GET ONE');
-});
+router.get('/', categoryControllers.getAll);
 
-router.post('/', (req, res, next) => {
-    console.log('POST CATEGORY');
-});
+router.get('/:categoryId', categoryControllers.getCategory);
 
-router.patch('/:categoryId', (req, res, next) => {
-    console.log('PATCH ONE');
-});
+router.post('/', categoryControllers.addCategory);
 
-router.delete('/:categoryId', (req, res, next) => {
-    console.log('DELETE ONE');
-});
+router.patch('/:categoryId', categoryControllers.updateCategory);
+
+router.delete('/:categoryId', categoryControllers.deleteCategory);
 
 module.exports = router;
