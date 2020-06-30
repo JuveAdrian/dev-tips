@@ -26,7 +26,6 @@ class Form extends React.Component {
     render() {
         return(
             <form className="form-style-9" onSubmit={this.handleSubmit}>
-                
                 <ul>
                     <li>
                         <h1>Add some interesting tip...</h1>    
