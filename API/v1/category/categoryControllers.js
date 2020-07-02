@@ -89,7 +89,28 @@ module.exports = {
             });
     },
     updateCategory: (req, res, next) => {
-        console.log('PATCH ONE');
+        const id = req.params.categoryId;
+        const updateOps = {};
+        for (const ops of req.body) {
+            updateOps[ops.propName] = ops.value;
+        }
+        Category.update({ _id : id}, { $set: updateOps })
+        .exec()
+        .then(result => {
+            res.status(200).json({
+                message: 'Tip updated',
+                request: {
+                    type: "GET",
+                    url: "http://localhost:4000/category/" + id
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error : err
+            });
+        });
     },
     deleteCategory: (req, res, next) => {
         console.log('DELETE ONE');
