@@ -61,7 +61,32 @@ module.exports = {
             })
     },
     addCategory: (req, res, next) => {
-        console.log('POST CATEGORY');
+        const category = new Category({
+            _id: new mongoose.Types.ObjectId(),
+            name: req.body.name
+        });
+        category
+            .save()
+            .then(result => {
+                console.log(result);
+                res.status(201).json({
+                    message: 'Create Category successfully',
+                    createdCategory: {
+                        name: result.name,
+                        _id: result._id,
+                        request: {
+                            type: 'GET',
+                            url: "http://localhost:4000/categories"
+                        }
+                    }
+                })
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err,
+                })
+            });
     },
     updateCategory: (req, res, next) => {
         console.log('PATCH ONE');
