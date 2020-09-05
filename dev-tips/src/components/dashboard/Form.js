@@ -23,6 +23,7 @@ class Form extends React.Component {
             this.setState({[eName]: event.target.value})
         }        
     };
+    
     render() {
         return(
             <form className="form-style-9" onSubmit={this.handleSubmit}>
