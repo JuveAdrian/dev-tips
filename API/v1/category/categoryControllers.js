@@ -113,6 +113,24 @@ module.exports = {
         });
     },
     deleteCategory: (req, res, next) => {
-        console.log('DELETE ONE');
+        const id = req.params.categoryId;
+        Category.deleteOne({ _id: id })
+        .exec()
+        .then( doc => {
+            res.status(200).json({
+                message: 'Category deleted',
+                request: {
+                    type: 'GET',
+                    url: 'http://localhost:4000/category/' + id,
+                    body: { name: 'String' }
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
     }
 }
